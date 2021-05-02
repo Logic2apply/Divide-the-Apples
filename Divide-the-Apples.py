@@ -1,7 +1,12 @@
 # Divide the Apples
-n = int(input("\nEnter the number of apples you got\n: "))
-mn = int(input("\nEnter the Minimim number\n: "))
-mx = int(input("\nEnter the Maximum number\n: "))
+try:
+    n = int(input("\nEnter the number of apples you got\n: "))
+    mn = int(input("\nEnter the Minimim number\n: "))
+    mx = int(input("\nEnter the Maximum number\n: "))
+
+except Exception as e:
+    print("Invalid input! Only integer allowded")
+    exit()
 
 def checkdiv():
     if n%mn==0:
@@ -11,7 +16,11 @@ def checkdiv():
         pass
 
 if mn==0 or mx==0 or n==0:
-    raise ZeroDivisionError("Can't except 0 for number-min-max!!\n")
+    print("Can't except 0 for apple-min-max!!\n")
+    exit()
+
+elif mx>mn:
+    print("Maximum n umber should be greater than or equal to minimum number!!")
     exit()
 
 else:
